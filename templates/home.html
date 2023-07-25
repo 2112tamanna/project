@@ -1,10 +1,76 @@
 <html>
+<style>
+    .login{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(192, 215, 235);
+    }
+    .heading1{
+        background-color: rgb(108, 149, 149);
+        font-size: 50px;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 6px 10px;
+    }
+    .heading2{
+        background-color: rgb(88, 127, 161);
+        font-size: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 6px 10px;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 20px;
+        width: 550px;
+        position: relative;
+        background-color: rgb(214, 228, 241);
+        padding: 20px;
+        padding-bottom: 100px;
+        border-radius: 10px;
+    }
+    .form select,input{
+        width: 170px;
+        height: 25px;
+        position: absolute;
+        right: 10px;
+    }
+    .btn{
+        position: absolute;
+        left: 28%;
+        width: 250px;
+        height: 40px;
+        font-size: 20px;
+        margin-top: 10px;
+        border-radius: 15px;
+        background-color: rgb(101, 151, 151);
+    }
+    .btn:hover{
+        background-color:rgb(52, 79, 79);
+        cursor: pointer;
+        color: white;
+    }
+    .result{
+        margin-top: 50px;
+        border: 2px solid black;
+        width: 500px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 6px;
+    }
+</style>
 <body>
     <div class="login">
-       <h1>Student Exam Performance Indicator</h1>
+       <h1 class="heading1">Student Exam Performance Indicator</h1>
    
-       <form action="{{ url_for('predict_datapoint')}}" method="post">
-        <h1>
+       <form class="form" action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1 class="heading2">
             <legend>Student Exam Performance Prediction</legend>
         </h1>
         <div class="mb-3">
@@ -104,7 +170,7 @@
             <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
         </div>
     </form>
-    <h2>
+    <h2 class="result">
        THE  prediction is {{results}}
     </h2>
    <body>
